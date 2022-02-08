@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Most Common Ways to set Evet Handlers</h1>
+<input id="field" type="text">
+<button id="update"> Click Here</button>
+    <p id="clicking"></p>
+    <button onclick="handleJustFunctionClick()">Just Function</button>
+    <button id="click">directAddEventListener</button>
+    <script>
+
+        // direct method
+document.getElementById('click').addEventListener('click',function(){
+    const p=document.getElementById('clicking');
+p.innerText='set by using direct method';  
+})
+
+// using function
+function handleJustFunctionClick(){
+const p=document.getElementById('clicking');
+p.innerText='set by using Function';
+}
+
+document.getElementById('update').addEventListener('click',function(){
+    const nameField=document.getElementById('field');
+    const p=document.getElementById('clicking');
+    p.innerText=nameField.value;
+    nameField.value='';
+})
+
+
+    </script>
+</body>
+</html>
